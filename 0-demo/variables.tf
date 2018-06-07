@@ -1,5 +1,5 @@
 variable "prefix" {
-  default = "brk2121"
+  default = "build2018demo"
 }
 
 variable "location" {

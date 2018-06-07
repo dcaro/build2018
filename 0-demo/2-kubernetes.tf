@@ -31,7 +31,10 @@ module "voting-app" {
   redis_hostname   = "${module.redis-cache.hostname}"
   replicas         = "${var.app_replicas}"
 }
-*/
+
+output "application_dns_name" {
+  value = "${var.app_name}.${module.kubernetes-ingress.application_dns_name}"
+}
 
 variable "DATADOG_API_KEY" {}
 
@@ -41,3 +44,6 @@ module "monitoring" {
   datadog_api_key = "${var.DATADOG_API_KEY}"
   raw_kube_config = "${module.kubernetes.raw_kube_config}"
 }
+
+*/
+

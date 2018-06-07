@@ -27,3 +27,7 @@ resource "local_file" "ingress" {
     command = "kubectl create -f ${path.module}/ingress.yaml --kubeconfig ${path.module}/kubeconfig"
   }
 }
+
+output "application_dns_name" {
+  value = "${lookup(data.external.httpapplicationrouting.result, "HTTPApplicationRoutingZoneName")}"
+}
