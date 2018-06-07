@@ -60,7 +60,7 @@ Note and save the FQDN of the application displayed as an output of the command.
 - Run the following command to get the logs of the HTTP Application Routing DNS:
 
 ```
-kubectl logs -f deploy/addon-http-application-routing-external-dns -n kube-system
+kubectl logs -f deploy/addon-http-application-routing-external-dns -n kube-system --kubeconfig ./modules/kubernetes-ingress/kubeconfig
 ```
 
 - Try to access the application using the DNS name that you noted earlier. 
